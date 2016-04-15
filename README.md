@@ -1,2 +1,2 @@
-# Kalkula-ka
+# Kalkulacka
 Projekt2
