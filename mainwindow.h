@@ -1,9 +1,17 @@
+/** \file
+ * @file    mainwindow.h
+ * @author  Miroslav Karpíšek
+ * @date    19 april 2016
+ * @brief   knihovna pro mainwindow.cpp
+ */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
 #include <QPushButton>
 #include <QLCDNumber>
+
 
 namespace Ui {
 class MainWindow;
@@ -12,6 +20,7 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -34,6 +43,10 @@ private slots:
     void sedm();
     void osm();
     void devet();
+    void tecka();
+    void mocnina();
+    void odmocnina();
+    void faktorial();
 
 private:
     int counter;
@@ -54,7 +67,10 @@ private:
     QPushButton *sedm_button;
     QPushButton *osm_button;
     QPushButton *devet_button;
-
+    QPushButton *tecka_button;
+    QPushButton *mocnina_button;
+    QPushButton *odmocnina_button;
+    QPushButton *faktorial_button;
 
 };
 

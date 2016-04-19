@@ -13,8 +13,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    mathematic_lib.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    mathematic_lib.h
 
-FORMS    += mainwindow.ui
