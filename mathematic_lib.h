@@ -1,12 +1,8 @@
-/*
- *Soubor: mathematic_lib.h
- *Tym: Vorezpruti
- *Autor: Zdenek Kamensky, 1.rocnik, FIT VUT Brno
- *Datum: 15.4.2016
- *Ukol: 2. projekt do predmetu Prakticke aspekty vyvoje software (IVS)
- *      skupinovy projekt - kalkulacka, vcetne matematicke knihovny a jejich testu,
- *	zaznamu o debuggovani a profilovani, softwarova a uzivatelska dokumentace, ...
- *Popis souboru: Hlavickovy soubor matematicke knihovny s prototypy vsech funkci
+/** \file
+ *@file mathematic_lib.h
+ *@author Zdenek Kamensky
+ *@date 15 Apr 2016
+ *@brief Hlavickovy soubor matematicke knihovny s prototypy vsech funkci
  *
  */ 
 

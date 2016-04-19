@@ -1,26 +1,56 @@
 /** \file
  * @file    mainwindow.cpp
- * @author  Miroslav Karpíšek
+ * @author  Miroslav Karpisek
  * @date    19 april 2016
- * @brief   nadefinovani objektu kalkulacky a nasledne vyuziti matematicke knihovny.
+ * @brief   Nadefinovani objektu kalkulacky a nasledne vyuziti matematicke knihovny pro vypocty jednotlivych prikladu
  */
 
 #include "mainwindow.h"
 #include <QtCore/QCoreApplication>
 #include "mathematic_lib.h"
 
-
-QString value = "", total = "";
-double prvniNum = 0,
-    druhyNum = 0,
-    pomocny = 0;
-
-int druhyNum_int = 0;
-
-/* pokud 0 - rovna_se , 1 - scitani, 2 - odcitani, 3 - nasobeni, 4 - deleni */
-int proces = 0;
 /**
- * @brief sestaveni celeho okna kalkulaci a pozicovani objektu
+ * @brief Retezec pro zobrazeni na vystupu
+ */
+QString value = "";
+
+/**
+ * @brief Vysledny zobrazitelny retezec
+ */
+QString total = "";
+
+/**
+ * @brief Prvni cislo (operand)
+ */
+double prvniNum;
+prvniNum = 0;
+
+/**
+ * @brief Druhe cislo (operand)
+ */
+double druhyNum;
+druhyNum = 0;
+
+/**
+ * @brief Pomocna promenna pro vypocty
+ */
+double pomocny;
+pomocny = 0;
+
+/**
+ * @brief Celociselny operand - pro nektere vypocty
+ */
+int druhyNum_int;
+druhyNum_int = 0;
+
+/**
+ * @brief Pokud je v teto promenne hodnota 0 - rovna_se, 1 - scitani,2 - odcitani,3 - nasobeni,4 - deleni 
+ */
+int proces;
+proces = 0;
+
+/**
+ * @brief Sestaveni celeho okna kalkulaci a pozicovani objektu
  */
 MainWindow::MainWindow(QWidget *parent) :
     /* nize je napozicovany kazdy jednotlivy objekt kalkulacky, a take spusteni signalu */
