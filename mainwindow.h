@@ -47,6 +47,7 @@ private slots:
     void mocnina();
     void odmocnina();
     void faktorial();
+    void negate();
 
 private:
     int counter;
@@ -71,6 +72,7 @@ private:
     QPushButton *mocnina_button;
     QPushButton *odmocnina_button;
     QPushButton *faktorial_button;
+    QPushButton *negate_button;
 
 };
 

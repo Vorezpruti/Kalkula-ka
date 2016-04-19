@@ -13,7 +13,7 @@
 QString value = "", total = "";
 double prvniNum = 0,
     druhyNum = 0,
-    meziSoucet = 0;
+    pomocny = 0;
 
 int druhyNum_int = 0;
 
@@ -38,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(clear_button, SIGNAL(released()), this, SLOT(clear()));
 
     rovno_button = new QPushButton("=", this);
-    rovno_button -> setGeometry(QRect(QPoint(150,300), QSize(50,50)));
+    rovno_button -> setGeometry(QRect(QPoint(50,350), QSize(200,50)));
     connect(rovno_button, SIGNAL(released()), this, SLOT(rovno()));
 
     scitani_button = new QPushButton("+", this);
@@ -113,6 +113,9 @@ MainWindow::MainWindow(QWidget *parent) :
     odmocnina_button -> setGeometry(QRect(QPoint(200,250), QSize(50,50)));
     connect(odmocnina_button, SIGNAL(released()), this, SLOT(odmocnina()));
 
+    negate_button = new QPushButton("+/-", this);
+    negate_button -> setGeometry(QRect(QPoint(150,300), QSize(50,50)));
+    connect(negate_button, SIGNAL(released()), this, SLOT(negate()));
     }
 
 /**
@@ -172,7 +175,7 @@ void MainWindow::rovno() {
             lcd -> display(total);
         } else {
             total = "0";
-            lcd -> display("ERR");
+            lcd -> display("Err04");
         }
 
         break;
@@ -181,7 +184,7 @@ void MainWindow::rovno() {
     case 5:
         if((druhyNum - int(druhyNum)) != 0) {
             total = "0";
-            lcd -> display("ERR");
+            lcd -> display("Err05");
         } else {
             druhyNum_int = int(druhyNum);
             total = QString::number(pow_f( prvniNum, druhyNum_int), 'g');
@@ -193,7 +196,7 @@ void MainWindow::rovno() {
 
     /* default = error */
     default:
-        lcd -> display("ERROR");
+        lcd -> display("Err42");
 
 
     }
@@ -216,7 +219,7 @@ void MainWindow::scitani() {
         prvniNum = value.toDouble();
         value = "" ;
         lcd -> display("0");
-        proces = 1;
+        proces = 10;
 
 }
 
@@ -224,6 +227,7 @@ void MainWindow::scitani() {
  * @brief Tlacitko pro odcitani
  */
 void MainWindow::odcitani() {
+
 
     prvniNum = value.toDouble();
     value = "" ;
@@ -259,11 +263,27 @@ void MainWindow::deleni() {
 void MainWindow::faktorial() {
 
     prvniNum = value.toDouble();
-    total = QString::number(fact_f( prvniNum), 'g');
-    lcd -> display(total);
-    value = total;
-    proces = -1;
-    total = "";
+    pomocny = fact_f( prvniNum);
+    if (pomocny == -1) {
+        lcd -> display("Err01");
+        value = "";
+        proces = -1;
+        total = "";
+
+
+    } else if (pomocny == -2) {
+        lcd -> display("Err02");
+        value = "";
+        proces = -1;
+        total = "";
+
+    } else {
+        total = QString::number(pomocny, 'g');
+        lcd -> display(total);
+        value = total;
+        proces = -1;
+        total = "";
+    }
 
 }
 
@@ -284,11 +304,22 @@ void MainWindow::mocnina() {
 void MainWindow::odmocnina() {
 
     prvniNum = value.toDouble();
-    total = QString::number(sqrt_f( prvniNum), 'g');
-    lcd -> display(total);
-    value = total;
-    proces = -1;
-    total = "";
+    pomocny = sqrt_f(prvniNum);
+    if (pomocny == -3) {
+        lcd -> display("Err03");
+        value = "";
+        proces = -1;
+        total = "";
+
+
+    }else{
+
+        total = QString::number(pomocny, 'g');
+        lcd -> display(total);
+        value = total;
+        proces = -1;
+        total = "";
+    }
 }
 
 /**
@@ -445,6 +476,19 @@ void MainWindow::tecka() {
     lcd -> display(value);
 }
 
+/**
+ * @brief Tlacitko pro negaci
+ */
+void MainWindow::negate() {
+
+    if (proces == -1) {
+        value = "-" + value;
+        proces = 0;
+    }
+    else
+        value = "-" + value;
+    lcd -> display(value);
+}
 
 
 
