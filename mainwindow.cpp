@@ -22,32 +22,27 @@ QString total = "";
 /**
  * @brief Prvni cislo (operand)
  */
-double prvniNum;
-prvniNum = 0;
+double prvniNum = 0;
 
 /**
  * @brief Druhe cislo (operand)
  */
-double druhyNum;
-druhyNum = 0;
+double druhyNum = 0;
 
 /**
  * @brief Pomocna promenna pro vypocty
  */
-double pomocny;
-pomocny = 0;
+double pomocny = 0;
 
 /**
  * @brief Celociselny operand - pro nektere vypocty
  */
-int druhyNum_int;
-druhyNum_int = 0;
+int druhyNum_int = 0;
 
 /**
  * @brief Pokud je v teto promenne hodnota 0 - rovna_se, 1 - scitani,2 - odcitani,3 - nasobeni,4 - deleni 
  */
-int proces;
-proces = 0;
+int proces = 0;
 
 /**
  * @brief Sestaveni celeho okna kalkulaci a pozicovani objektu
