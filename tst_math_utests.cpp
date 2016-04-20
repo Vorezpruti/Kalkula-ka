@@ -1,13 +1,8 @@
-/*
- *Soubor: tst_math_utests.cpp
- *Tym: Vorezpruti
- *Autor: Zdenek Kamensky, 1.rocnik, FIT VUT Brno
- *Datum: 15.4.2016
- *Ukol: 2. projekt do predmetu Prakticke aspekty vyvoje software (IVS)
- *      skupinovy projekt - kalkulacka, vcetne matematicke knihovny a jejich testu,
- *	zaznamu o debuggovani a profilovani, softwarova a uzivatelska dokumentace, ...
- *Popis souboru: Testy matematicke knihovny "mathematic_lib.h"
- *
+/** \file
+ * @file tst_math_utests.cpp
+ * @author Zdenek Kamensky
+ * @date 15 April 2016
+ * @brief Testy matematicke knihovny "mathematic_lib.h"
  */ 
 
 

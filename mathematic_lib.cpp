@@ -1,13 +1,8 @@
-/*
- *Soubor: mathematic_lib.cpp
- *Tym: Vorezpruti
- *Autor: Zdenek Kamensky, 1.rocnik, FIT VUT Brno
- *Datum: 16.4.2016
- *Ukol: 2. projekt do predmetu Prakticke aspekty vyvoje software (IVS)
- *      skupinovy projekt - kalkulacka, vcetne matematicke knihovny a jejich testu,
- *	zaznamu o debuggovani a profilovani, softwarova a uzivatelska dokumentace, ...
- *Popis souboru: Implementace funkci matematicke knihovny
- *
+/** \file
+ * @file mathematic_lib.cpp
+ * @author Zdenek Kamensky
+ * @date 16 April 2016
+ * @brief Implementace funkci matematicke knihovny
  */ 
 
 
