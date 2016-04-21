@@ -1,13 +1,18 @@
 /** \file
  * @file    mainwindow.cpp
  * @author  Miroslav Karpisek
- * @date    19 april 2016
+ * @date    21 april 2016
  * @brief   Nadefinovani objektu kalkulacky a nasledne vyuziti matematicke knihovny pro vypocty jednotlivych prikladu
  */
 
 #include "mainwindow.h"
 #include <QtCore/QCoreApplication>
 #include "mathematic_lib.h"
+#include <QTextBrowser>
+#include <QFile>
+#include <QFileDialog>
+
+
 
 /**
  * @brief Retezec pro zobrazeni na vystupu
@@ -52,15 +57,23 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
+
     QMainWindow(parent) {
+
+
+    this->setWindowTitle("Kalkulačka Vořežpruti");
 
     lcd = new QLCDNumber(10, this);
     lcd -> setGeometry(QRect(QPoint(50,50), QSize(200, 50)));
 
-
-    clear_button = new QPushButton("C", this);
+    clear_button = new QPushButton("C",this);
     clear_button -> setGeometry(QRect(QPoint(200,300), QSize(50,50)));
     connect(clear_button, SIGNAL(released()), this, SLOT(clear()));
+
+
+    napoveda_button = new QPushButton("?", this);
+    napoveda_button -> setGeometry(QRect(QPoint(125,400), QSize(50,50)));
+    connect(napoveda_button, SIGNAL(released()), this, SLOT(napoveda()));
 
     rovno_button = new QPushButton("=", this);
     rovno_button -> setGeometry(QRect(QPoint(50,350), QSize(200,50)));
@@ -149,6 +162,7 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::clear() {
     value = "";
     lcd -> display("0");
+    proces = 0;
 }
 
 /**
@@ -244,7 +258,7 @@ void MainWindow::scitani() {
         prvniNum = value.toDouble();
         value = "" ;
         lcd -> display("0");
-        proces = 10;
+        proces = 1;
 
 }
 
@@ -515,8 +529,18 @@ void MainWindow::negate() {
     lcd -> display(value);
 }
 
+void MainWindow::napoveda() {
+
+  QMessageBox msgBox;
+
+  msgBox.question(this, "Napoveda", "Napoveda: \n ahoj \n 1 \n 1 \n 1 \n 1 \n 1", QMessageBox::Ok);
+
+}
+
 
 
 MainWindow::~MainWindow()
 {
+
 }
+

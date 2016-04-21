@@ -1,7 +1,7 @@
 /** \file
  * @file    mainwindow.h
  * @author  Miroslav Karpíšek
- * @date    19 april 2016
+ * @date    21 april 2016
  * @brief   knihovna pro mainwindow.cpp
  */
 
@@ -11,15 +11,17 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QLCDNumber>
+#include <QMessageBox>
 
 
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
 
 
 public:
@@ -48,6 +50,8 @@ private slots:
     void odmocnina();
     void faktorial();
     void negate();
+    void napoveda();
+
 
 private:
     int counter;
@@ -73,6 +77,10 @@ private:
     QPushButton *odmocnina_button;
     QPushButton *faktorial_button;
     QPushButton *negate_button;
+    QPushButton *napoveda_button;
+    QMessageBox *napoveda_box;
+
+
 
 };
 
