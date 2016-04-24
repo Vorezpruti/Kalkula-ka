@@ -533,7 +533,14 @@ void MainWindow::napoveda() {
 
   QMessageBox msgBox;
 
-  msgBox.question(this, "Napoveda", "Napoveda: \n ahoj \n 1 \n 1 \n 1 \n 1 \n 1", QMessageBox::Ok);
+  msgBox.question(this, "Nápověda",
+                  "Nápověda: \n\n " \
+                  "Všechny operace mohou být prováděny nad celými čísly, ale také nad čísly reálnými. Vyjímkou je funkce\n"\
+                  "faktoriál, která může být prováděna pouze nad přirozenými čísly.\n"\
+                  "Desetinná čísla jsou v programu zapisována pomocí desetinné tečky „.“. Desetinnou tečku je možno \n"\
+                  "zapsat kliknutím na tlačítko ve stejné podobě. Dále je také možno změnit znaménko čísla pomocí \n"\
+                  "tlačítka „+/-“. Zapsané číslo či výsledek lze vymazat kliknutím na tlačítko „C“. \n",
+                  QMessageBox::Ok );
 
 }
 
